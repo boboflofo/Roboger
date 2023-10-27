@@ -13,7 +13,9 @@ Code: roboger(\[2\])
 Expected Output: (\["Boop!"\])
 
 Test: "It should replace all 3s in the returned list with a "Won't you be my neighbor""
-Code: roboger(\[3\])
+Code: roboger(3)
 Expected Output: (\["Won't you be my neighbor"\])
 
-
+Test: "It should replace 1s regardless of amounts of digits in the input"
+Code: roboger(10)
+Expected Output:
