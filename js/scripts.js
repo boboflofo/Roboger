@@ -1,18 +1,22 @@
-window.addEventListener("load", ()=> {
-  document.querySelector("#form").addEventListener("submit", handleSubmit)
-})
+window.addEventListener("load", () => {
+  document.querySelector("#form").addEventListener("submit", handleSubmit);
+});
 
-function handleSubmit(e){
+function handleSubmit(e) {
   e.preventDefault();
-  const input = document.querySelector("#num").value
-  const wordsRoboger = roboger(input)
-  console.log(wordsRoboger)
-  const text = document.querySelector(".translation")
-  wordsRoboger.forEach(word=> {
-    text.append(word + " ")
-  })
+  translationReset();
+  const input = document.querySelector("#num").value;
+  const wordsRoboger = roboger(input);
+  console.log(wordsRoboger);
+  const text = document.querySelector(".translation");
+  wordsRoboger.forEach((word) => {
+    text.append(word + " ");
+  });
 }
 
+function translationReset() {
+  document.querySelector(".translation").innerText = ''
+}
 
 function roboger(num) {
   if (num && !isNaN(num)) {
