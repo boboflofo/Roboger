@@ -6,11 +6,9 @@ function roboger(num) {
     }
     modifiedListNum = listNum.map((num) => {
       let numSplit = num.toString().split("");
-      const exceptions = [0,4,5,6,7,8,9]
-      if (exceptions.includes(num)) {
-      	console.log(5)
-      	return parseInt(num)
-      }
+      
+ 
+      
       numSplit = numSplit.reverse()
       console.log(numSplit)
       for (let i = 0; i < numSplit.length; i++) {
@@ -20,7 +18,9 @@ function roboger(num) {
           return "Boop";
         } else if (numSplit[i] === "3") {
           return "Won't you be my neighbor";
-        } 
+        } else if (i === numSplit.length-1) {
+        return parseInt(num)
+        }
       }
     });
     return modifiedListNum;
