@@ -28,4 +28,8 @@ Test: "It should replace 1s 2s and 3s regardless of amounts of digits in the inp
 Code: roboger(10)
 Expected Output: (\[0, "Beep", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 8, 9, "Beep!"\])
 
+Test: "It should replace multiple digit numbers with strings based on the last specified digit"
+Code: roboger(13)
+Expected Output: (\[0, "Beep", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 8, 9, "Beep!", "Beep!", "Boop!", "Won't you be my neighbor?", "Beep!"\])
+
 
