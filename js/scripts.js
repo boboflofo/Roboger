@@ -1,5 +1,5 @@
 function roboger(num) {
-  if (num) {
+  if (num && !isNaN(num)) {
     listNum = [];
     for (let i = 0; i <= num; i++) {
       listNum.push(i);
