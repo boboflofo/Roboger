@@ -6,16 +6,17 @@ function handleSubmit(e) {
   e.preventDefault();
   translationReset();
   const input = document.querySelector("#num").value;
+  const name = document.querySelector("#name").value
   const wordsRoboger = roboger(input);
-  console.log(wordsRoboger);
   const text = document.querySelector(".translation");
   wordsRoboger.forEach((word) => {
-    text.append(word + " ");
+    if (word === "Won't you be my neighbor?")
+    text.append(word.slice(0,word.length-1) + " " + name + "?" + " ");
   });
 }
 
 function translationReset() {
-  document.querySelector(".translation").innerText = ''
+  document.querySelector(".translation").innerText = "";
 }
 
 function roboger(num) {
