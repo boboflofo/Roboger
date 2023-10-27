@@ -5,7 +5,12 @@ window.addEventListener("load", ()=> {
 function handleSubmit(e){
   e.preventDefault();
   const input = document.querySelector("#num").value
-  
+  const wordsRoboger = roboger(input)
+  console.log(wordsRoboger)
+  const text = document.querySelector(".translation")
+  wordsRoboger.forEach(word=> {
+    text.append(word + " ")
+  })
 }
 
 
