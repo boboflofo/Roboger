@@ -7,21 +7,15 @@ function roboger(num) {
     modifiedListNum = listNum.map((num) => {
       let numSplit = num.toString().split("");
       
- 
-      
-      numSplit = numSplit.reverse()
-      console.log(numSplit)
-      for (let i = 0; i < numSplit.length; i++) {
-        if (numSplit[i] === "1") {
-          return "Beep!";
-        } else if (numSplit[i] === "2") {
+  
+        if (numSplit.includes("3")) {
+          return "Won't you be my neighbor?";
+        } else if (numSplit.includes("2")) {
           return "Boop";
-        } else if (numSplit[i] === "3") {
-          return "Won't you be my neighbor";
-        } else if (i === numSplit.length-1) {
-        return parseInt(num)
-        }
-      }
+        } else if (numSplit.includes("1")) {
+          return "Beep!";
+        } else {return parseInt(num)}
+      
     });
     return modifiedListNum;
   } else {
