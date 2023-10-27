@@ -6,12 +6,20 @@ function handleSubmit(e) {
   e.preventDefault();
   translationReset();
   const input = document.querySelector("#num").value;
-  const name = document.querySelector("#name").value
+  const name = document.querySelector("#name").value;
   const wordsRoboger = roboger(input);
   const text = document.querySelector(".translation");
+  if (wordsRoboger === "Please input a number!") {
+    document.querySelector(".error").classList.remove("hidden");
+  } else {
+    document.querySelector(".error").classList.add("hidden");
+  }
   wordsRoboger.forEach((word) => {
-    if (word === "Won't you be my neighbor?")
-    text.append(word.slice(0,word.length-1) + " " + name + "?" + " ");
+    if (word === "Won't you be my neighbor?") {
+      text.append(word.slice(0, word.length - 1) + " " + name + "?" + " ");
+    } else {
+      text.append(word + " ");
+    }
   });
 }
 
